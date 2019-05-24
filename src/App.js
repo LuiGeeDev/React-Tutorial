@@ -3,6 +3,7 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import Content from "./components/Content";
 import Subject from "./components/Subject";
+import Control from "./components/Control";
 
 class App extends Component {
   constructor(props) {
@@ -56,6 +57,11 @@ class App extends Component {
             });
           }.bind(this)}
           data={this.state.contents}
+        />
+        <Control
+          onChangeMode={function(mode) {
+            this.setState({ mode });
+          }.bind(this)}
         />
         <Content title={_title} desc={_desc} />
       </div>
